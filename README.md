@@ -1,37 +1,38 @@
-# 🧠 Projet de Deep Learning avec PyTorch
+# 🐍 Projet Snake avec Q-Learning
 
 ## 📚 Introduction
-Ce projet implémente des modèles de deep learning pour la reconnaissance d'images en utilisant PyTorch. Il explore différentes architectures de réseaux de neurones et techniques d'optimisation pour améliorer la précision de la classification.
+Ce projet implémente un agent intelligent capable d'apprendre à jouer au jeu Snake en utilisant le Q-Learning, une technique d'apprentissage par renforcement. L'agent apprend progressivement à optimiser ses mouvements pour maximiser son score.
 
 ## 🎯 Objectifs du Projet
-- Implémenter des réseaux de neurones convolutifs (CNN) pour la classification d'images
-- Explorer différentes architectures de modèles
-- Optimiser les performances avec des techniques avancées
+- Implémenter un agent Q-Learning pour le jeu Snake
+- Explorer les paramètres d'apprentissage optimaux
+- Visualiser l'évolution de l'apprentissage
 - Fournir une base de code claire et réutilisable
 
 ## 🔬 Concepts Théoriques
 
-### Réseaux de Neurones Convolutifs (CNN)
-Les CNN sont des architectures de deep learning spécialement conçues pour traiter des données structurées en grille, comme les images. Ils utilisent trois concepts principaux :
+### Q-Learning
+Le Q-Learning est une méthode d'apprentissage par renforcement qui permet à un agent d'apprendre une politique optimale en interagissant avec son environnement :
 
-1. **Couches de Convolution** : 
-   - Extraient les caractéristiques locales des images
-   - Utilisent des filtres (kernels) qui parcourent l'image
-   - Permettent la détection de motifs hiérarchiques
+1. **Table Q (Q-Table)** : 
+   - Stocke les valeurs Q pour chaque paire état-action
+   - Q(s,a) représente la récompense attendue pour une action a dans l'état s
+   - Se met à jour au fur et à mesure de l'apprentissage
 
-2. **Pooling** :
-   - Réduit la dimensionnalité des features maps
-   - Améliore la robustesse aux variations de position
-   - Types courants : Max Pooling, Average Pooling
+2. **Formule de mise à jour** :
+   ```
+   Q(s,a) = Q(s,a) + α[R + γ·max(Q(s',a')) - Q(s,a)]
+   ```
+   où :
+   - α : Taux d'apprentissage (learning rate)
+   - R : Récompense immédiate
+   - γ : Facteur d'actualisation (discount factor)
+   - s' : État suivant
+   - a' : Action possible dans l'état suivant
 
-3. **Couches Entièrement Connectées** :
-   - Combinent les caractéristiques pour la classification finale
-   - Transforment les features en prédictions de classes
-
-### Techniques d'Optimisation
-- **Batch Normalization** : Normalise les activations pour une convergence plus rapide
-- **Dropout** : Prévient le surapprentissage en désactivant aléatoirement des neurones
-- **Data Augmentation** : Augmente la diversité des données d'entraînement
+3. **Exploration vs Exploitation** :
+   - ε-greedy : Équilibre entre exploration de nouvelles actions et exploitation des connaissances
+   - Diminution progressive de ε pour favoriser l'exploitation
 
 ## 🛠️ Installation
 
