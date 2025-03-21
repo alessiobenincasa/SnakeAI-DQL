@@ -1,0 +1,6 @@
+txt filter=lfs diff=lfs merge=lfs -text
+*.txt filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+venv/lib/python3.11/site-packages/torch/lib/*.dylib filter=lfs diff=lfs merge=lfs -text
+venv/lib/python3.11/site-packages/torch/lib/*.so filter=lfs diff=lfs merge=lfs -text
+venv/lib/python3.11/site-packages/torch/lib/*.dll filter=lfs diff=lfs merge=lfs -text
