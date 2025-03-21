@@ -36,3 +36,4 @@ models/*.pth
 # System specific
 .DS_Store
 Thumbs.db
+venv/
