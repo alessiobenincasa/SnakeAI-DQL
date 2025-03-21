@@ -1,37 +1,60 @@
-# Learn2Slither
+# 🧠 Projet de Deep Learning avec PyTorch
 
-A reinforcement learning project where a snake learns to navigate and survive in a grid environment through Q-learning.
+## 📚 Introduction
+Ce projet implémente des modèles de deep learning pour la reconnaissance d'images en utilisant PyTorch. Il explore différentes architectures de réseaux de neurones et techniques d'optimisation pour améliorer la précision de la classification.
 
-## Features
+## 🎯 Objectifs du Projet
+- Implémenter des réseaux de neurones convolutifs (CNN) pour la classification d'images
+- Explorer différentes architectures de modèles
+- Optimiser les performances avec des techniques avancées
+- Fournir une base de code claire et réutilisable
 
-- 10x10 grid environment
-- Snake with Q-learning capabilities
-- Multiple training modes
-- Visual interface with step-by-step mode
-- Model saving and loading
-- Configurable training sessions
+## 🔬 Concepts Théoriques
 
-## Requirements
+### Réseaux de Neurones Convolutifs (CNN)
+Les CNN sont des architectures de deep learning spécialement conçues pour traiter des données structurées en grille, comme les images. Ils utilisent trois concepts principaux :
 
-- Python 3.8+
-- Dependencies listed in requirements.txt
+1. **Couches de Convolution** : 
+   - Extraient les caractéristiques locales des images
+   - Utilisent des filtres (kernels) qui parcourent l'image
+   - Permettent la détection de motifs hiérarchiques
 
-## Installation
+2. **Pooling** :
+   - Réduit la dimensionnalité des features maps
+   - Améliore la robustesse aux variations de position
+   - Types courants : Max Pooling, Average Pooling
 
-1. Create a virtual environment (recommended):
+3. **Couches Entièrement Connectées** :
+   - Combinent les caractéristiques pour la classification finale
+   - Transforment les features en prédictions de classes
+
+### Techniques d'Optimisation
+- **Batch Normalization** : Normalise les activations pour une convergence plus rapide
+- **Dropout** : Prévient le surapprentissage en désactivant aléatoirement des neurones
+- **Data Augmentation** : Augmente la diversité des données d'entraînement
+
+## 🛠️ Installation
+
 ```bash
+# Créer un environnement virtuel
 python -m venv venv
-source venv/bin/activate  # On Unix/macOS
-# or
-.\venv\Scripts\activate  # On Windows
-```
 
-2. Install dependencies:
-```bash
+# Activer l'environnement
+source venv/bin/activate  # Linux/Mac
+# ou
+.\venv\Scripts\activate  # Windows
+
+# Installer les dépendances
 pip install -r requirements.txt
 ```
 
-## Usage
+## 📊 Structure du Projet
+
+- `snake.py`: Main entry point
+- `environment/`: Contains the game board and rules
+- `agent/`: Q-learning agent implementation
+- `visualization/`: Pygame-based visualization
+- `models/`: Directory for saved model states 
 
 Run the game with different options:
 
@@ -44,12 +67,4 @@ Run the game with different options:
 
 # Run in step-by-step mode
 ./snake -visual on -load models/100sess.txt -sessions 10 -dontlearn -step-by-step
-```
-
-## Project Structure
-
-- `snake.py`: Main entry point
-- `environment/`: Contains the game board and rules
-- `agent/`: Q-learning agent implementation
-- `visualization/`: Pygame-based visualization
-- `models/`: Directory for saved model states 
+``` 
